@@ -71,7 +71,7 @@ def reply(since_id):
 
 
 def main():
-    s = open('latest.txt', 'r+')
+    s = open('latest.txt', 'rw')
     since_id = int(s.readline())
     while True:
         since_id = reply(since_id)
@@ -79,7 +79,7 @@ def main():
         s.seek(0)
         s.write(str(since_id))
         print("waiting ...")
-        time.sleep(30)
+        time.sleep(600)
 
 
 if __name__ == '__main__':
